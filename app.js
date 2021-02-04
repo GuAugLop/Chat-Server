@@ -16,7 +16,7 @@ app.get("/", (req,res)=>{
 io.on("connection", (socket) => {
   console.log("[IO] Connection => Server has a new connection");
   socket.on("chat message", ({ id, message }) => {
-    console.log("[SOCKET] Chat.message => ", message);
+    console.log(`${message} ${hour} : ${minute}`);
     io.emit("chat message", {
       id,
       message,
