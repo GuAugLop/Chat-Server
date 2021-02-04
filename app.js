@@ -14,7 +14,6 @@ app.get("/", (req,res)=>{
 })
 
 io.on("connection", (socket) => {
-  console.log("[IO] Connection => Server has a new connection");
   socket.on("chat message", ({ id, message }) => {
     let hour = new Date()
     let minute = new Date()
@@ -26,13 +25,8 @@ io.on("connection", (socket) => {
     });
   });
   socket.on("disconnect", () => {
-    console.log("[SOCKET] Disconnect => A connection was disconnected");
+
   });
 });
 
-http.listen(SERVER_PORT, () => {
-  console.log(
-    `[HTTP] Listen => Server is running in port: ${SERVER_PORT}`
-  );
-  console.log("[HTTP] Listen => Press CTRL+C to stop it");
-});
+http.listen(SERVER_PORT);
