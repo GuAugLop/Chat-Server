@@ -21,7 +21,7 @@ io.on("connection", (socket) => {
       id,
       message,
       hour: (hour < 10 ? `0${hour - 3}` : hour - 3),
-      minute: (minute < 10 ? `0${minute}` : minute)
+      minute: minute
     });
   });
   socket.on("disconnect", () => {
