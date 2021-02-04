@@ -4,7 +4,7 @@ const io = require("socket.io")(http);
 io.origins("*:*");
 
 const SERVER_HOST = "localhost";
-const SERVER_PORT = 8080;
+const SERVER_PORT = 80;
 
 io.on("connection", (socket) => {
   console.log("[IO] Connection => Server has a new connection");
