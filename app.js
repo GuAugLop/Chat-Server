@@ -26,7 +26,7 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(SERVER_PORT, SERVER_HOST, () => {
+http.listen(SERVER_PORT () => {
   console.log(
     `[HTTP] Listen => Server is running at http://${SERVER_HOST}:${SERVER_PORT}`
   );
