@@ -6,6 +6,10 @@ io.origins("*:*");
 const SERVER_HOST = "localhost";
 const SERVER_PORT = 80;
 
+app.get("/", (req,res)=>{
+  res.send("Api")
+})
+
 io.on("connection", (socket) => {
   console.log("[IO] Connection => Server has a new connection");
   socket.on("chat message", ({ id, message }) => {
