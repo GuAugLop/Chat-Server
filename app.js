@@ -4,7 +4,7 @@ const io = require("socket.io")(http);
 io.origins("*:*");
 
 const SERVER_HOST = "localhost";
-const SERVER_PORT = 80;
+const SERVER_PORT = process.env.PORT || 8080;
 
 app.get("/", (req,res)=>{
   res.send("Api")
