@@ -6,8 +6,8 @@ io.origins("*:*");
 const SERVER_HOST = "localhost";
 const SERVER_PORT = process.env.PORT || 8080;
 
-let hour = new Date().getHours()
-let minute = new Date().getMinutes()
+let hour = new Date()
+let minute = new Date()
 
 app.get("/", (req,res)=>{
   res.send("Api")
@@ -20,8 +20,8 @@ io.on("connection", (socket) => {
     io.emit("chat message", {
       id,
       message,
-      hour: (hour < 10 ? `0${hour - 3}` : hour - 3),
-      minute: minute
+      hour: (hour.getHours() < 10 ? `0${hour - 3}` : hour - 3),
+      minute: minute.getMinutes()
     });
   });
   socket.on("disconnect", () => {
