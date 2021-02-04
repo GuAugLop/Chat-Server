@@ -20,7 +20,7 @@ io.on("connection", (socket) => {
     io.emit("chat message", {
       id,
       message,
-      hour: (hour.getHours() < 10 ? `0${hour - 3}` : hour - 3),
+      hour: (hour.getHours() < 10 ? `0${hour.getHours() - 3}` : hour.getHours() - 3),
       minute: minute.getMinutes()
     });
   });
