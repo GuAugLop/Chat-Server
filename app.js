@@ -28,7 +28,7 @@ io.on("connection", (socket) => {
 
 http.listen(SERVER_PORT () => {
   console.log(
-    `[HTTP] Listen => Server is running at http://${SERVER_HOST}:${SERVER_PORT}`
+    `[HTTP] Listen => Server is running in port: ${SERVER_PORT}`
   );
   console.log("[HTTP] Listen => Press CTRL+C to stop it");
 });
